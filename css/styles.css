@@ -478,6 +478,7 @@ img {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+    color: var(--white);
 }
 
 .subscribe-input {
@@ -485,28 +486,33 @@ img {
     border-radius: 4px;
     width: 264px;
     height: 40px;
-    background: inherit;
+    background-color: transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
 }
 
 .subscribe-input::placeholder {
     font-weight: 400;
     font-size: 12px;
-    line-height: 200%;
+    line-height: 2;
     letter-spacing: 0.04em;
     color: var(--white);
+    padding-left: 16px;
 }
 
 .subscribe .btn-order {
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
 }
 
 .subscribe-icon {
     fill: var(--white);
+    margin-left: 16px;
 }
 
 
@@ -521,9 +527,7 @@ img {
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: opacity, visibility;
 
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+   
 }
 
 .backdrop.is-open {
@@ -538,11 +542,12 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 4px;
-    max-width: 408px;
-    min-height: 600px;
+    width: 408px;
+    min-height: 584px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: var(--dairy);
     padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -550,15 +555,31 @@ img {
     top: 24px;
     right: 24px;
     background-color: var(--cornflower);
-    border-radius: 100%;
+    border-radius: 50%;
     padding: 0;
     display: flex;
     width: 24px;
     height: 24px;
-    border: 1px solid var(--navy-blue-modal);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover, .modal-close-btn:focus {
+    background-color: var(--ocean);
+    border: none;  
+}
+
+.modal-close-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+    fill: var(--white);
 }
 
 .modal-caption {
@@ -567,6 +588,7 @@ img {
     line-height: 150%;
     text-align: center;
     margin-bottom: 16px;
+    color: var(--navy-blue);
 }
 
 .modal-form-field {
@@ -596,6 +618,7 @@ img {
     height: 40px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: transparent;
+    background-color: transparent;
 }
 
 .modal-form-input:focus {
@@ -612,6 +635,11 @@ img {
     left: 16px;
     transform: translateY(-50%);
     fill: var(--navy-blue);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-field-div {
+    margin-bottom: 16px;
 }
 
 .modal-form-comment {
@@ -621,7 +649,6 @@ img {
     border-radius: 4px;
     width: 100%;
     height: 120px;
-    margin-bottom: 16px;
     outline: transparent;
     padding: 8px 16px;
     font-weight: 400;
@@ -629,6 +656,8 @@ img {
     line-height: 117%;
     letter-spacing: 0.04em;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
 }
 
 .modal-form-comment::placeholder {
@@ -660,12 +689,15 @@ img {
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
 }
 
 input[type='checkbox']:checked + .modal-form-description > .modal-form-checkbox {
     border-color: var(--ocean);
     background-color: var(--ocean);
+    border: none;
+    fill: var(--cloud);
 }
 
 .modal-form-checkbox-icon {
