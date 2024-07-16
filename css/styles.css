@@ -582,6 +582,11 @@ img {
     fill: currentColor;
 }
 
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+    fill: #ffffff;
+}
+
 .modal-caption {
     font-weight: 500;
     font-size: 16px;
