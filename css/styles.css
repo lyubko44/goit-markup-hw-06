@@ -464,6 +464,53 @@ img {
     background-color: var(--green);
 }
 
+.subscribe {
+    margin-left: 80px;
+}
+
+.subscribe > form {
+    display: flex;
+    gap: 24px;
+}
+
+.subscribe-title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.subscribe-input {
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    width: 264px;
+    height: 40px;
+    background: inherit;
+}
+
+.subscribe-input::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 200%;
+    letter-spacing: 0.04em;
+    color: var(--white);
+}
+
+.subscribe .btn-order {
+    border-radius: 4px;
+    padding: 8px 24px;
+    width: 165px;
+    height: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+.subscribe-icon {
+    fill: var(--white);
+}
+
+
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -512,10 +559,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.modal-close-icon {
-   
 }
 
 .modal-caption {
