@@ -97,13 +97,13 @@ img {
 }
 
 .container {
-    min-width: 300px;
+    min-width: 280px;
     max-width: 320px;
     margin: 0 auto;
     padding: 0 16px;
 
-    outline: 2px solid red;
-    outline-offset: -2px;
+    /* outline: 2px solid red;
+    outline-offset: -2px; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -263,6 +263,7 @@ img {
 @media only screen and (min-width: 1158px) {
     .contact-list {
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 40px;
     }
@@ -449,7 +450,26 @@ img {
 
 .team-list {
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    row-gap: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 64px;
+    column-gap: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+    .team-list {
+        flex-direction: row;
+        gap: 24px;
+    }
 }
 
 .team-desc-container {
@@ -508,14 +528,39 @@ img {
 /* #portfolio 4 */
 .portfolio-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     row-gap: 48px;
     column-gap: 24px;
 }
 
+@media only screen and (min-width: 768px) {
+  .portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+    .portfolio-list {
+        flex-wrap: wrap;
+    }
+}
+
 .portfolio-item {
-    flex: 1 1 calc(33.33% - 24px);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio-item {
+    flex: 1 1 calc(50% - 24px);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+    .portfolio-item {
+        flex: 1 1 calc(33.3% - 24px);
+    }
 }
 
 .portfolio-img-content {
@@ -562,24 +607,65 @@ img {
 .footer {
     color: var(--cloud);
     background: var(--navy-blue);
+    padding: 96px 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        padding: 96px 108px;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer {
     padding: 100px 0
+  }
 }
 
 .footer .container {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: baseline;
+    row-gap: 72px;
+    padding: 0px;
 }
 
-.footer-logo-content {
-    margin-right: 120px
+@media only screen and (min-width: 768px) {
+  .footer .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 24px;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+    .footer .container {
+        padding: 0 16px;
+        flex-wrap: nowrap;
+        column-gap: 0;
+    }
+}
+    
+
+@media only screen and (min-width: 1158px) {
+    .footer-logo-content {
+        margin-right: 120px
+    }
 }
 
 .logo-footer {
     color: var(--iris);
     margin-bottom: 16px;
-    margin-left: right;
+    margin-left: auto;
     display: inline-block;
+}
+
+@media only screen and (max-width: 1157px) {
+  .logo-footer {
+    padding: 0px;
+  }
 }
 
 .logo-footer-accent {
@@ -600,6 +686,12 @@ img {
     color: var(--white);
 }
 
+@media only screen and (max-width: 767px) {
+  .social-title {
+    text-align: center;
+  }
+}
+
 .footer .social-icons {
     gap: 16px;
 }
@@ -609,13 +701,29 @@ img {
     background-color: var(--green);
 }
 
-.subscribe {
-    margin-left: 80px;
+@media only screen and (min-width: 1158px) {
+  .subscribe {
+        margin-left: 80px;
+    }
 }
 
-.subscribe > form {
+.subscribe-form {
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .subscribe-form {
+        column-gap: 24px;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+  .subscribe-form {
+    row-gap: 24px;
+  }
 }
 
 .subscribe-title {
@@ -624,6 +732,12 @@ img {
     font-size: 16px;
     line-height: 150%;
     color: var(--white);
+}
+
+@media only screen and (max-width: 767px) {
+  .subscribe-title {
+    text-align: center;
+  }
 }
 
 .subscribe-input {
